@@ -12,17 +12,41 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', sans-serif;
     background: #0f172a;
     color: #e2e8f0;
-    line-height: 1.6;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    background: #020617;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #38bdf8;
 }
 
 /* HERO */
 header {
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 100px 20px 60px;
 }
 
 header h1 {
@@ -31,20 +55,38 @@ header h1 {
 }
 
 header p {
-    font-size: 1.2rem;
     color: #94a3b8;
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
     max-width: 1100px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 60px 20px;
 }
 
 h2 {
     margin-bottom: 20px;
     color: #38bdf8;
+}
+
+/* ABOUT */
+.about p {
+    color: #cbd5f5;
+    max-width: 700px;
+}
+
+/* SKILLS */
+.skills {
+    margin-top: 20px;
+}
+
+.skills span {
+    display: inline-block;
+    background: #1e293b;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 5px;
 }
 
 /* PROJECT GRID */
@@ -59,8 +101,14 @@ h2 {
     background: #1e293b;
     padding: 20px;
     border-radius: 15px;
-    transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.project.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project:hover {
@@ -68,31 +116,24 @@ h2 {
 }
 
 .project h3 {
-    color: #f8fafc;
     margin-bottom: 10px;
 }
 
 .project p {
     font-size: 0.9rem;
-    color: #cbd5f5;
     margin-bottom: 10px;
+    color: #cbd5f5;
 }
 
 /* BUTTON */
 .project a {
     display: inline-block;
-    margin-top: 10px;
     padding: 8px 14px;
     background: #38bdf8;
     color: #0f172a;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
-    transition: 0.3s;
-}
-
-.project a:hover {
-    background: #0ea5e9;
 }
 
 /* FOOTER */
@@ -100,61 +141,85 @@ footer {
     text-align: center;
     padding: 20px;
     color: #64748b;
-    font-size: 0.9rem;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- NAVBAR -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+</nav>
+
+<!-- HERO -->
+<header id="home">
     <h1>Wesal Soliman</h1>
     <p>AI Student | Machine Learning | Backend Development</p>
 </header>
 
-<section>
+<!-- ABOUT -->
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+        I am an AI student passionate about building intelligent systems and solving real-world problems. 
+        My work spans machine learning, backend development, and system-level projects. 
+        I enjoy combining theory with practical applications to create impactful solutions.
+    </p>
+
+    <div class="skills">
+        <span>Python</span>
+        <span>PyTorch</span>
+        <span>Machine Learning</span>
+        <span>Computer Vision</span>
+        <span>Node.js</span>
+        <span>React</span>
+        <span>Docker</span>
+        <span>Verilog</span>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
     <h2>Projects</h2>
 
     <div class="projects">
 
-        <!-- Ultrasound -->
         <div class="project">
             <h3>Ultrasound Classification</h3>
-            <p>Deep learning model for classifying uterine abnormalities from ultrasound images.</p>
+            <p>Deep learning model for classifying uterine abnormalities.</p>
             <p><b>Tech:</b> PyTorch, Computer Vision</p>
-            <a href="https://github.com/wesalmagdi/Ultrasound-Based-Classification-of-Uterine-Abnormalities.git" target="_blank">View Project</a>
+            <a href="https://github.com/wesalmagdi/Ultrasound-Based-Classification-of-Uterine-Abnormalities.git" target="_blank">View</a>
         </div>
 
-        <!-- Roommate -->
         <div class="project">
             <h3>Roommate Finder</h3>
-            <p>Full-stack app for finding and posting shared housing with advanced filters.</p>
+            <p>Full-stack housing platform with filtering and authentication.</p>
             <p><b>Tech:</b> React, Node.js, JWT</p>
-            <a href="https://github.com/wesalmagdi/Roommate-Finder.git" target="_blank">View Project</a>
+            <a href="https://github.com/wesalmagdi/Roommate-Finder.git" target="_blank">View</a>
         </div>
 
-        <!-- Cloud -->
         <div class="project">
             <h3>Cloud Management System</h3>
-            <p>Dashboard for managing Docker containers and virtual machines.</p>
-            <p><b>Tech:</b> Python, Docker, Streamlit</p>
-            <a href="https://github.com/wesalmagdi/Cloud-Management-System.git" target="_blank">View Project</a>
+            <p>Dashboard for Docker and VM management.</p>
+            <p><b>Tech:</b> Python, Docker</p>
+            <a href="https://github.com/wesalmagdi/Cloud-Management-System.git" target="_blank">View</a>
         </div>
 
-        <!-- Convex Hull -->
         <div class="project">
             <h3>Convex Hull Visualizer</h3>
-            <p>Interactive visualization of computational geometry algorithms.</p>
+            <p>Interactive geometry algorithm visualization.</p>
             <p><b>Tech:</b> Python, Algorithms</p>
-            <a href="https://github.com/wesalmagdi/Convex-Hull-Visualizer.git" target="_blank">View Project</a>
+            <a href="https://github.com/wesalmagdi/Convex-Hull-Visualizer.git" target="_blank">View</a>
         </div>
 
-        <!-- CPU -->
         <div class="project">
-            <h3>64-bit RISC CPU Design</h3>
-            <p>Designed CPU control logic and ALU control using Verilog.</p>
+            <h3>64-bit RISC CPU</h3>
+            <p>CPU control and ALU logic design in Verilog.</p>
             <p><b>Tech:</b> Verilog, Vivado</p>
-            <a href="https://github.com/wesalmagdi/Computer-Architecture.git" target="_blank">View Project</a>
+            <a href="https://github.com/wesalmagdi/Computer-Architecture.git" target="_blank">View</a>
         </div>
 
     </div>
@@ -163,6 +228,21 @@ footer {
 <footer>
     © 2026 Wesal Soliman
 </footer>
+
+<!-- ANIMATION SCRIPT -->
+<script>
+const projects = document.querySelectorAll('.project');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+projects.forEach(p => observer.observe(p));
+</script>
 
 </body>
 </html>
