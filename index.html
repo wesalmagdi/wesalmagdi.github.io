@@ -60,6 +60,42 @@ header p {
     color: #c4b5fd;
 }
 
+/* DOWNLOAD BUTTONS */
+.download-buttons {
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn.glow {
+    background: linear-gradient(90deg, #f472b6, #c084fc);
+    color: #0f0a1a;
+    box-shadow: 0 0 15px rgba(244, 114, 182, 0.5);
+}
+
+.btn.glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(244, 114, 182, 0.9);
+}
+
+.btn.outline {
+    border: 2px solid #c084fc;
+    color: #c084fc;
+}
+
+.btn.outline:hover {
+    background: #c084fc;
+    color: #0f0a1a;
+}
+
 /* SECTIONS */
 section {
     max-width: 1100px;
@@ -70,6 +106,70 @@ section {
 h2 {
     margin-bottom: 20px;
     color: #f472b6;
+}
+
+/* ABOUT LAYOUT */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media(max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* TABS */
+.tabs {
+    margin-bottom: 15px;
+}
+
+.tab {
+    background: transparent;
+    border: 1px solid #c084fc;
+    color: #c084fc;
+    padding: 6px 12px;
+    margin-right: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab.active,
+.tab:hover {
+    background: #c084fc;
+    color: #0f0a1a;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(5px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* HIGHLIGHTS */
+.highlight-card {
+    background: #1e1b4b;
+    padding: 12px;
+    border-radius: 12px;
+    margin: 8px 0;
+    transition: 0.3s;
+}
+
+.highlight-card:hover {
+    border: 1px solid #f472b6;
+    box-shadow: 0 0 15px rgba(244, 114, 182, 0.4);
+    transform: translateX(5px);
 }
 
 /* SKILLS */
@@ -115,7 +215,6 @@ h2 {
     color: #ddd6fe;
 }
 
-/* BUTTON */
 .project a {
     display: inline-block;
     padding: 8px 14px;
@@ -142,67 +241,59 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
 </nav>
 
-<!-- HERO -->
 <header id="home">
     <h1>Wesal Soliman</h1>
     <p>AI Student | Machine Learning | Backend Development</p>
+
+    <div class="download-buttons">
+        <a href="Wesal_Soliman_Resume.pdf" download class="btn glow">Download Resume</a>
+        <a href="Wesal_Soliman_NLP_Internship_Cover_Letter.pdf" download class="btn outline">Download Cover Letter</a>
+    </div>
 </header>
 
-<!-- ABOUT -->
-<section id="about" class="about">
+<section id="about">
     <h2>About Me</h2>
 
     <div class="about-container">
 
-        <!-- LEFT: TEXT -->
         <div class="about-text">
-            <p>
-                I’m an AI student deeply passionate about <b>Deep Learning</b> and building systems that 
-                actually make an impact. While I’ve explored machine learning broadly, I naturally gravitate 
-                toward deep learning — whether in medical imaging, NLP, or real-world applications.
-            </p>
 
-            <p>
-                I enjoy solving problems across different layers — from backend systems to low-level hardware — 
-                but what excites me most is turning complex ideas into working solutions.
-            </p>
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('passion', event)">Passion</button>
+                <button class="tab" onclick="showTab('mindset', event)">Mindset</button>
+                <button class="tab" onclick="showTab('growth', event)">Growth</button>
+            </div>
 
-            <p>
-                Over time, I’ve pushed myself beyond just technical work — from competing in programming contests 
-                to standing on stage presenting projects. I think I’ve reached a point where I’m no longer saying 
-                no to opportunities.
-            </p>
+            <div id="passion" class="tab-content active">
+                <p>I’m an AI student passionate about <b>Deep Learning</b>, especially NLP and impactful real-world systems.</p>
+            </div>
+
+            <div id="mindset" class="tab-content">
+                <p>I enjoy solving problems across layers — backend, systems, and AI — turning ideas into real solutions.</p>
+            </div>
+
+            <div id="growth" class="tab-content">
+                <p>From competitions to public speaking, I’ve grown into someone who actively seeks challenges and opportunities.</p>
+            </div>
+
         </div>
 
-        <!-- RIGHT: HIGHLIGHTS -->
         <div class="about-highlights">
-            <div class="highlight-card">
-                🧠 Deep Learning Focus
-            </div>
-            <div class="highlight-card">
-                🏆 3rd Place – ABSA Hackathon
-            </div>
-            <div class="highlight-card">
-                🥈 2nd Place – Enactus Competition
-            </div>
-            <div class="highlight-card">
-                💻 Competitive Programming
-            </div>
-            <div class="highlight-card">
-                🎯 ECPC Rank 57 / 218
-            </div>
+            <div class="highlight-card">🧠 Deep Learning Focus</div>
+            <div class="highlight-card">🏆 3rd Place – ABSA Hackathon</div>
+            <div class="highlight-card">🥈 2nd Place – Enactus</div>
+            <div class="highlight-card">💻 Competitive Programming</div>
+            <div class="highlight-card">🎯 ECPC Rank 57 / 218</div>
         </div>
 
     </div>
 
-    <!-- SKILLS -->
     <div class="skills">
         <span>Python</span>
         <span>Deep Learning</span>
@@ -214,105 +305,33 @@ footer {
         <span>Verilog</span>
     </div>
 </section>
-    
-<section id="achievements">
-    <h2>Achievements</h2>
 
-    <div class="projects">
-
-        <div class="project">
-            <h3>Arabic ABSA Hackathon</h3>
-            <p>
-                Secured <b>3rd place</b> in a competitive hackathon focused on Arabic Aspect-Based Sentiment Analysis. 
-                This achievement led to receiving a Machine Learning internship opportunity.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>ECPC Regional Contest</h3>
-            <p>
-                Ranked <b>12th in university</b> and <b>57th out of 218 teams</b> overall, 
-                demonstrating strong problem-solving and algorithmic thinking skills.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>Youth Scope Competition (Enactus)</h3>
-            <p>
-                Presented an education software project on stage as part of Enactus Nile University team 
-                and achieved <b>2nd place</b>. A defining experience in public speaking and confidence building.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- PROJECTS -->
 <section id="projects">
     <h2>Projects</h2>
 
     <div class="projects">
-
         <div class="project">
             <h3>Ultrasound Classification</h3>
             <p>Deep learning model for classifying uterine abnormalities.</p>
-            <p><b>Tech:</b> PyTorch, Computer Vision</p>
             <a href="https://github.com/wesalmagdi/Ultrasound-Based-Classification-of-Uterine-Abnormalities.git" target="_blank">View</a>
         </div>
-
-        <div class="project">
-            <h3>Roommate Finder</h3>
-            <p>Full-stack housing platform with filtering and authentication.</p>
-            <p><b>Tech:</b> React, Node.js, JWT</p>
-            <a href="https://github.com/wesalmagdi/Roommate-Finder.git" target="_blank">View</a>
-        </div>
-
-        <div class="project">
-            <h3>Cloud Management System</h3>
-            <p>Dashboard for Docker and VM management.</p>
-            <p><b>Tech:</b> Python, Docker</p>
-            <a href="https://github.com/wesalmagdi/Cloud-Management-System.git" target="_blank">View</a>
-        </div>
-
-        <div class="project">
-            <h3>Convex Hull Visualizer</h3>
-            <p>Interactive geometry algorithm visualization.</p>
-            <p><b>Tech:</b> Python, Algorithms</p>
-            <a href="https://github.com/wesalmagdi/Convex-Hull-Visualizer.git" target="_blank">View</a>
-        </div>
-
-        <div class="project">
-            <h3>64-bit RISC CPU</h3>
-            <p>CPU control and ALU logic design in Verilog.</p>
-            <p><b>Tech:</b> Verilog, Vivado</p>
-            <a href="https://github.com/wesalmagdi/Computer-Architecture.git" target="_blank">View</a>
-        </div>
-
     </div>
 </section>
 
 <footer>
     <p>
-        Connect with me:
         <a href="https://www.linkedin.com/in/wesalmagdy/" target="_blank">LinkedIn</a>
     </p>
-    © 2026 Wesal Soliman
 </footer>
 
-<!-- ANIMATION SCRIPT -->
 <script>
-const projects = document.querySelectorAll('.project');
+function showTab(id, event) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-projects.forEach(p => observer.observe(p));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+}
 </script>
 
 </body>
