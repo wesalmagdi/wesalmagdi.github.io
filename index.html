@@ -12,9 +12,7 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -39,9 +37,7 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
-    color: #f472b6;
-}
+nav a:hover { color: #f472b6; }
 
 /* HERO */
 header {
@@ -56,14 +52,10 @@ header h1 {
     -webkit-text-fill-color: transparent;
 }
 
-header p {
-    color: #c4b5fd;
-}
+header p { color: #c4b5fd; }
 
-/* DOWNLOAD BUTTONS */
-.download-buttons {
-    margin-top: 25px;
-}
+/* BUTTONS */
+.download-buttons { margin-top: 25px; }
 
 .btn {
     display: inline-block;
@@ -78,12 +70,12 @@ header p {
 .btn.glow {
     background: linear-gradient(90deg, #f472b6, #c084fc);
     color: #0f0a1a;
-    box-shadow: 0 0 15px rgba(244, 114, 182, 0.5);
+    box-shadow: 0 0 15px rgba(244,114,182,0.5);
 }
 
 .btn.glow:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(244, 114, 182, 0.9);
+    box-shadow: 0 0 25px rgba(244,114,182,0.9);
 }
 
 .btn.outline {
@@ -96,17 +88,35 @@ header p {
     color: #0f0a1a;
 }
 
-/* SECTIONS */
+/* SECTION */
 section {
     max-width: 1100px;
     margin: auto;
     padding: 60px 20px;
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #f472b6;
+h2 { color: #f472b6; margin-bottom: 20px; }
+
+/* ABOUT */
+.tabs { margin-bottom: 15px; }
+
+.tab {
+    border: 1px solid #c084fc;
+    color: #c084fc;
+    padding: 6px 12px;
+    margin-right: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
 }
+
+.tab.active, .tab:hover {
+    background: #c084fc;
+    color: #0f0a1a;
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
 
 /* SKILLS */
 .skills span {
@@ -115,123 +125,39 @@ h2 {
     padding: 8px 12px;
     border-radius: 20px;
     margin: 5px;
-    color: #e9d5ff;
 }
 
-/* GRID */
+/* PROJECTS */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     gap: 20px;
 }
 
-/* CARD */
 .project {
     background: #1a1238;
     padding: 20px;
     border-radius: 20px;
-    transition: 0.4s;
-    border: 1px solid #2e1065;
-    box-shadow: 0 0 20px rgba(192, 132, 252, 0.1);
+    transition: 0.3s;
 }
 
 .project:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 0 0 30px rgba(244, 114, 182, 0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(244,114,182,0.3);
 }
 
-.project h3 {
-    margin-bottom: 10px;
-    color: #f9a8d4;
-}
+.project h3 { color: #f9a8d4; }
 
-.project p {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    color: #ddd6fe;
-}
-
-/* BUTTON */
 .project a {
     display: inline-block;
+    margin-top: 10px;
     padding: 8px 14px;
-    background: linear-gradient(90deg, #f472b6, #c084fc);
+    background: linear-gradient(90deg,#f472b6,#c084fc);
     color: #0f0a1a;
+    border-radius: 10px;
     text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: 0.3s;
 }
 
-.project a:hover {
-    opacity: 0.8;
-}
-
-/* ABOUT LAYOUT */
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-@media(max-width: 768px) {
-    .about-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* TABS */
-.tabs {
-    margin-bottom: 15px;
-}
-
-.tab {
-    background: transparent;
-    border: 1px solid #c084fc;
-    color: #c084fc;
-    padding: 6px 12px;
-    margin-right: 6px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.tab.active,
-.tab:hover {
-    background: #c084fc;
-    color: #0f0a1a;
-}
-
-.tab-content {
-    display: none;
-    animation: fadeIn 0.4s ease;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(5px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-/* HIGHLIGHTS */
-.highlight-card {
-    background: #1e1b4b;
-    padding: 12px;
-    border-radius: 12px;
-    margin: 8px 0;
-    transition: 0.3s;
-}
-
-.highlight-card:hover {
-    border: 1px solid #f472b6;
-    box-shadow: 0 0 15px rgba(244, 114, 182, 0.4);
-    transform: translateX(5px);
-}
-
-/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
@@ -252,7 +178,6 @@ footer {
     <h1>Wesal Soliman</h1>
     <p>AI Student | Machine Learning | Backend Development</p>
 
-    <!-- DOWNLOAD BUTTONS -->
     <div class="download-buttons">
         <a href="Wesal_Soliman_Resume.pdf" download class="btn glow">Download Resume</a>
         <a href="Wesal_Soliman_NLP_Internship_Cover_Letter.pdf" download class="btn outline">Download Cover Letter</a>
@@ -260,135 +185,115 @@ footer {
 </header>
 
 <!-- ABOUT -->
-<section id="about" class="about">
-    <h2>About Me</h2>
+<section id="about">
+<h2>About Me</h2>
 
-    <div class="about-container">
+<div class="tabs">
+    <button class="tab active" onclick="showTab('t1', event)">Overview</button>
+    <button class="tab" onclick="showTab('t2', event)">Focus</button>
+    <button class="tab" onclick="showTab('t3', event)">Achievements</button>
+</div>
 
-        <!-- INTERACTIVE TEXT -->
-        <div class="about-text">
+<div id="t1" class="tab-content active">
+<p>
+I am an AI student passionate about building intelligent systems and solving real-world problems. 
+My work spans machine learning, backend development, and system-level projects. 
+I enjoy combining theory with practical applications to create impactful solutions.
+</p>
+</div>
 
-            <div class="tabs">
-                <button class="tab active" onclick="showTab('passion', event)">Passion</button>
-                <button class="tab" onclick="showTab('mindset', event)">Mindset</button>
-                <button class="tab" onclick="showTab('growth', event)">Growth</button>
-            </div>
+<div id="t2" class="tab-content">
+<p>
+I focus strongly on <b>Deep Learning</b>, especially in areas like medical imaging and NLP. 
+I enjoy solving problems across layers — from backend systems to low-level hardware — 
+but I’m especially driven by creating real-world impact.
+</p>
+</div>
 
-            <div id="passion" class="tab-content active">
-                <p>I’m an AI student deeply passionate about <b>Deep Learning</b> and impactful systems.</p>
-            </div>
+<div id="t3" class="tab-content">
+<p>
+🏆 3rd place – Arabic ABSA Hackathon (led to ML internship)<br>
+🎯 ECPC Rank 57 / 218 (12th at university level)<br>
+🎤 Enactus Presenter – 2nd place Youth Scope
+</p>
+</div>
 
-            <div id="mindset" class="tab-content">
-                <p>I enjoy solving problems across layers — backend, systems, and AI.</p>
-            </div>
+<div class="skills">
+<span>Python</span>
+<span>Deep Learning</span>
+<span>PyTorch</span>
+<span>Machine Learning</span>
+<span>NLP</span>
+<span>Computer Vision</span>
+<span>Node.js</span>
+<span>React</span>
+<span>Docker</span>
+<span>Verilog</span>
+</div>
 
-            <div id="growth" class="tab-content">
-                <p>I’ve grown through competitions, presentations, and pushing beyond comfort zones.</p>
-            </div>
-
-        </div>
-
-        <!-- ORIGINAL HIGHLIGHTS (UNCHANGED) -->
-        <div class="about-highlights">
-            <div class="highlight-card">🧠 Deep Learning Focus</div>
-            <div class="highlight-card">🏆 3rd Place – ABSA Hackathon</div>
-            <div class="highlight-card">🥈 2nd Place – Enactus Competition</div>
-            <div class="highlight-card">💻 Competitive Programming</div>
-            <div class="highlight-card">🎯 ECPC Rank 57 / 218</div>
-        </div>
-
-    </div>
-
-    <!-- SKILLS (UNCHANGED) -->
-    <div class="skills">
-        <span>Python</span>
-        <span>Deep Learning</span>
-        <span>PyTorch</span>
-        <span>NLP</span>
-        <span>Computer Vision</span>
-        <span>Node.js</span>
-        <span>Docker</span>
-        <span>Verilog</span>
-    </div>
 </section>
 
-<!-- ACHIEVEMENTS (FULLY PRESERVED) -->
-<section id="achievements">
-    <h2>Achievements</h2>
-
-    <div class="projects">
-
-        <div class="project">
-            <h3>Arabic ABSA Hackathon</h3>
-            <p>Secured <b>3rd place</b> and earned an ML internship opportunity.</p>
-        </div>
-
-        <div class="project">
-            <h3>ECPC Regional Contest</h3>
-            <p>Ranked <b>12th in university</b> and <b>57th overall</b>.</p>
-        </div>
-
-        <div class="project">
-            <h3>Youth Scope (Enactus)</h3>
-            <p>Presented on stage and achieved <b>2nd place</b>.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- PROJECTS (UNCHANGED) -->
+<!-- PROJECTS -->
 <section id="projects">
-    <h2>Projects</h2>
+<h2>Projects</h2>
 
-    <div class="projects">
+<div class="projects">
 
-        <div class="project">
-            <h3>Ultrasound Classification</h3>
-            <p>Deep learning model for classifying uterine abnormalities.</p>
-            <p><b>Tech:</b> PyTorch</p>
-            <a href="https://github.com/wesalmagdi/Ultrasound-Based-Classification-of-Uterine-Abnormalities.git" target="_blank">View</a>
-        </div>
+<div class="project">
+<h3>Ultrasound Classification</h3>
+<p><b>Role:</b> Deep Learning Engineer</p>
+<p>Built a model for classifying uterine abnormalities.</p>
+<p><b>Tech:</b> PyTorch, Computer Vision</p>
+<a href="https://github.com/wesalmagdi/Ultrasound-Based-Classification-of-Uterine-Abnormalities.git" target="_blank">View</a>
+</div>
 
-        <div class="project">
-            <h3>Roommate Finder</h3>
-            <p>Full-stack housing platform.</p>
-            <a href="https://github.com/wesalmagdi/Roommate-Finder.git" target="_blank">View</a>
-        </div>
+<div class="project">
+<h3>Roommate Finder</h3>
+<p><b>Role:</b> Full-Stack Developer</p>
+<p>Housing platform with authentication and filtering.</p>
+<p><b>Tech:</b> React, Node.js, JWT</p>
+<a href="https://github.com/wesalmagdi/Roommate-Finder.git" target="_blank">View</a>
+</div>
 
-        <div class="project">
-            <h3>Cloud Management System</h3>
-            <p>Docker & VM dashboard.</p>
-            <a href="https://github.com/wesalmagdi/Cloud-Management-System.git" target="_blank">View</a>
-        </div>
+<div class="project">
+<h3>Cloud Management System</h3>
+<p><b>Role:</b> Backend Developer</p>
+<p>System for managing Docker containers and VMs.</p>
+<p><b>Tech:</b> Python, Docker</p>
+<a href="https://github.com/wesalmagdi/Cloud-Management-System.git" target="_blank">View</a>
+</div>
 
-        <div class="project">
-            <h3>Convex Hull Visualizer</h3>
-            <p>Algorithm visualization tool.</p>
-            <a href="https://github.com/wesalmagdi/Convex-Hull-Visualizer.git" target="_blank">View</a>
-        </div>
+<div class="project">
+<h3>Convex Hull Visualizer</h3>
+<p><b>Role:</b> Algorithm Developer</p>
+<p>Interactive visualization of geometry algorithms.</p>
+<p><b>Tech:</b> Python, Algorithms</p>
+<a href="https://github.com/wesalmagdi/Convex-Hull-Visualizer.git" target="_blank">View</a>
+</div>
 
-        <div class="project">
-            <h3>64-bit RISC CPU</h3>
-            <p>CPU design in Verilog.</p>
-            <a href="https://github.com/wesalmagdi/Computer-Architecture.git" target="_blank">View</a>
-        </div>
+<div class="project">
+<h3>64-bit RISC CPU</h3>
+<p><b>Role:</b> Hardware Designer</p>
+<p>Designed ALU and control logic.</p>
+<p><b>Tech:</b> Verilog, Vivado</p>
+<a href="https://github.com/wesalmagdi/Computer-Architecture.git" target="_blank">View</a>
+</div>
 
-    </div>
+</div>
 </section>
 
 <footer>
-    <p>
-        Connect with me:
-        <a href="https://www.linkedin.com/in/wesalmagdy/" target="_blank">LinkedIn</a>
-    </p>
-    © 2026 Wesal Soliman
+<p>
+Connect with me:
+<a href="https://www.linkedin.com/in/wesalmagdy/" target="_blank">LinkedIn</a>
+</p>
+© 2026 Wesal Soliman
 </footer>
 
 <script>
 function showTab(id, event) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-
     document.getElementById(id).classList.add('active');
     event.target.classList.add('active');
 }
