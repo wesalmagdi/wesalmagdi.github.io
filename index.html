@@ -1,252 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
-    <style>
-        body {
-            font-family: Arial;
-            margin: 40px;
-            background: #f5f5f5;
-        }
-        h1 { color: #333; }
-        .project {
-            background: white;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wesal Soliman | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* HERO */
+header {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #38bdf8;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+}
+
+/* SECTION */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+/* PROJECT GRID */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.project {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project h3 {
+    color: #f8fafc;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 0.9rem;
+    color: #cbd5f5;
+    margin-bottom: 10px;
+}
+
+/* BUTTON */
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.project a:hover {
+    background: #0ea5e9;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+</style>
 </head>
 
 <body>
 
-<h1>Wesal Soliman</h1>
-<p>AI Student</p>
+<header>
+    <h1>Wesal Soliman</h1>
+    <p>AI Student | Machine Learning | Backend Development</p>
+</header>
 
-<h2>Projects</h2>
+<section>
+    <h2>Projects</h2>
 
-<div class="project">
-    <h3>Ultrasound-Based Classification of Uterine Abnormalities</h3>
+    <div class="projects">
 
-    <p><b>Description:</b> 
-    A deep learning-based system for classifying uterine abnormalities using ultrasound images. 
-    The project focuses on applying computer vision techniques to assist in early medical diagnosis 
-    and improve classification accuracy in gynecological imaging.
-    </p>
+        <!-- Ultrasound -->
+        <div class="project">
+            <h3>Ultrasound Classification</h3>
+            <p>Deep learning model for classifying uterine abnormalities from ultrasound images.</p>
+            <p><b>Tech:</b> PyTorch, Computer Vision</p>
+            <a href="https://github.com/wesalmagdi/Ultrasound-Based-Classification-of-Uterine-Abnormalities.git" target="_blank">View Project</a>
+        </div>
 
-    <p><b>My Role:</b> 
-    - Built and trained deep learning models for image classification<br>
-    - Performed data preprocessing and augmentation on ultrasound images<br>
-    - Evaluated model performance using appropriate metrics<br>
-    - Analyzed results and improved model accuracy
-    </p>
+        <!-- Roommate -->
+        <div class="project">
+            <h3>Roommate Finder</h3>
+            <p>Full-stack app for finding and posting shared housing with advanced filters.</p>
+            <p><b>Tech:</b> React, Node.js, JWT</p>
+            <a href="https://github.com/wesalmagdi/Roommate-Finder.git" target="_blank">View Project</a>
+        </div>
 
-    <p><b>Technologies:</b> 
-    Python, PyTorch, Computer Vision, Deep Learning, Medical Imaging
-    </p>
+        <!-- Cloud -->
+        <div class="project">
+            <h3>Cloud Management System</h3>
+            <p>Dashboard for managing Docker containers and virtual machines.</p>
+            <p><b>Tech:</b> Python, Docker, Streamlit</p>
+            <a href="https://github.com/wesalmagdi/Cloud-Management-System.git" target="_blank">View Project</a>
+        </div>
 
-    <p><b>Key Insights:</b> 
-    Ultrasound imaging is widely used because it is non-invasive and effective for detecting uterine conditions, 
-    while deep learning models can improve diagnostic consistency and reduce human error.
-    </p>
+        <!-- Convex Hull -->
+        <div class="project">
+            <h3>Convex Hull Visualizer</h3>
+            <p>Interactive visualization of computational geometry algorithms.</p>
+            <p><b>Tech:</b> Python, Algorithms</p>
+            <a href="https://github.com/wesalmagdi/Convex-Hull-Visualizer.git" target="_blank">View Project</a>
+        </div>
 
-    <a href="https://github.com/wesalmagdi/Ultrasound-Based-Classification-of-Uterine-Abnormalities.git" target="_blank">
-        View Project on GitHub
-    </a>
-</div>
+        <!-- CPU -->
+        <div class="project">
+            <h3>64-bit RISC CPU Design</h3>
+            <p>Designed CPU control logic and ALU control using Verilog.</p>
+            <p><b>Tech:</b> Verilog, Vivado</p>
+            <a href="https://github.com/wesalmagdi/Computer-Architecture.git" target="_blank">View Project</a>
+        </div>
 
-<div class="project">
-    <h3>Roommate Finder Platform</h3>
+    </div>
+</section>
 
-    <p><b>Description:</b> 
-    A full-stack web application that allows users to find available rooms or post listings بسهولة. 
-    The platform includes advanced filtering (budget, location, WiFi, pets, AC, gender preference) 
-    to help users quickly find compatible shared housing.
-    </p>
-
-    <p><b>My Role:</b> 
-    - Developed the backend using Node.js and built RESTful APIs<br>
-    - Implemented authentication and authorization using JWT<br>
-    - Designed and handled data flow between frontend and backend<br>
-    - Contributed to frontend integration and feature implementation
-    </p>
-
-    <p><b>Technologies:</b> 
-    React, Node.js, REST API, JWT Authentication, JavaScript
-    </p>
-
-    <p><b>Key Features:</b> 
-    - User registration and secure authentication<br>
-    - Create, manage, and browse room listings<br>
-    - Advanced filtering (budget, location, WiFi, pets, AC, gender)<br>
-    - Responsive user interface
-    </p>
-
-    <p><b>Security:</b> 
-    Password hashing, JWT-based authentication, and secure environment variable handling 
-    to protect user data and sessions.
-    </p>
-
-    <a href="https://github.com/wesalmagdi/Roommate-Finder.git" target="_blank">
-        View Project on GitHub
-    </a>
-
-<div class="project">
-    <h3>Cloud Management System</h3>
-
-    <p><b>Description:</b> 
-    A cloud management dashboard that provides a simplified interface for handling 
-    virtualization and container-based operations. The system integrates Docker 
-    and virtual machine management into a single interactive platform.
-    </p>
-
-    <p><b>My Role:</b> 
-    - Contributed to backend development and system functionality<br>
-    - Worked with Docker-based operations and container management<br>
-    - Assisted in implementing features for managing images and containers<br>
-    - Participated in testing and improving system reliability
-    </p>
-
-    <p><b>Technologies:</b> 
-    Python, Streamlit, Docker, QEMU, Subprocess
-    </p>
-
-    <p><b>Key Features:</b> 
-    - Container management (list, stop, search, pull images)<br>
-    - Docker image building and handling<br>
-    - Virtual machine configuration and setup<br>
-    - Interactive dashboard for system control
-    </p>
-
-    <p><b>Learning Outcome:</b> 
-    Gained hands-on experience with cloud and DevOps concepts, including 
-    containerization, virtualization, and system-level automation.
-    </p>
-
-    <a href="https://github.com/wesalmagdi/Cloud-Management-System.git" target="_blank">
-        View Project on GitHub
-    </a>
-</div>
-
-
-<div class="project">
-    <h3>Convex Hull Visualizer</h3>
-
-    <p><b>Description:</b> 
-    An interactive visualization tool that demonstrates how the convex hull is constructed 
-    from a set of points using computational geometry algorithms. The application helps 
-    users understand algorithm behavior step-by-step through visual feedback.
-    </p>
-
-    <p><b>My Role:</b> 
-    - Designed and implemented the full application independently<br>
-    - Developed the convex hull algorithm logic (e.g., Graham Scan / Jarvis March)<br>
-    - Built an interactive visualization interface for real-time updates<br>
-    - Handled user input and dynamic rendering of points and hull structure
-    </p>
-
-    <p><b>Technologies:</b> 
-    Python, Algorithms, Computational Geometry, Visualization
-    </p>
-
-    <p><b>Key Features:</b> 
-    - Interactive point placement<br>
-    - Step-by-step convex hull construction<br>
-    - Real-time visual updates of algorithm execution<br>
-    - Educational tool for understanding geometry algorithms
-    </p>
-
-    <p><b>Technical Highlights:</b> 
-    Focuses on efficient geometric computation and clear visualization of algorithmic steps, 
-    bridging the gap between theory and practical implementation.
-    </p>
-
-    <a href="https://github.com/wesalmagdi/Convex-Hull-Visualizer.git" target="_blank">
-        View Project on GitHub
-    </a>
-</div>
-
-
-<div class="project">
-    <h3>Computer Architecture Projects</h3>
-
-    <p><b>Description:</b> 
-    A collection of projects and lab work focused on fundamental computer architecture concepts, 
-    including digital logic design, low-level system behavior, and hardware-oriented problem solving.
-    </p>
-
-    <p><b>My Role:</b> 
-    - Implemented and analyzed computer architecture concepts through practical assignments<br>
-    - Worked on digital circuit design and simulation<br>
-    - Applied low-level logic to understand how CPUs and hardware components operate<br>
-    - Tested and validated outputs using simulation tools
-    </p>
-
-    <p><b>Technologies:</b> 
-    Logisim, Digital Logic Design, Computer Architecture, Simulation Tools
-    </p>
-
-    <p><b>Key Concepts Covered:</b> 
-    - Arithmetic Logic Unit (ALU) design<br>
-    - Digital circuits and logic gates<br>
-    - Low-level system operations<br>
-    - Hardware simulation and testing
-    </p>
-
-    <p><b>Learning Outcome:</b> 
-    Developed a deeper understanding of how computers work internally, including how 
-    instructions are processed, how data flows through circuits, and how hardware design 
-    impacts software performance.
-    </p>
-
-    <a href="https://github.com/wesalmagdi/Computer-Architecture.git" target="_blank">
-        View Project on GitHub
-    </a>
-</div>
-
-<div class="project">
-    <h3>Computer Architecture – 64-bit RISC CPU Design</h3>
-
-    <p><b>Description:</b> 
-    A hardware design project focused on building and simulating a 64-bit RISC-based CPU architecture. 
-    The system integrates core components such as the ALU, Control Unit, Datapath, and Register File 
-    to execute instructions across multiple formats (R, I, J, S types).
-    </p>
-
-    <p><b>My Role (Core Contributor):</b> 
-    - Designed and implemented CPU Control Unit logic<br>
-    - Developed ALU Control signals for instruction execution<br>
-    - Contributed to instruction decoding and control signal generation<br>
-    - Tested and validated module behavior using Verilog testbenches in Vivado
-    </p>
-
-    <p><b>Technologies:</b> 
-    Verilog, Vivado, Digital Logic Design, Computer Architecture, Hardware Simulation
-    </p>
-
-    <p><b>System Components:</b> 
-    - Arithmetic Logic Unit (ALU)<br>
-    - Control Unit<br>
-    - Datapath<br>
-    - Register File
-    </p>
-
-    <p><b>Architecture:</b> 
-    64-bit RISC architecture supporting multiple instruction formats (R-Type, I-Type, J-Type, S-Type), 
-    including arithmetic, memory access, and control flow operations.
-    </p>
-
-    <p><b>Technical Highlights:</b> 
-    Demonstrates how instructions are decoded and executed at the hardware level, coordinating 
-    data flow between CPU components through control signals and datapath design.
-    </p>
-
-    <a href="https://github.com/wesalmagdi/Computer-Architecture.git" target="_blank">
-        View Project on GitHub
-    </a>
-</div>
-
-
+<footer>
+    © 2026 Wesal Soliman
+</footer>
 
 </body>
 </html>
